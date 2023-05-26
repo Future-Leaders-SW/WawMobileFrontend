@@ -1,2 +1,0 @@
-# WawMobileFrontend
-WawMobileFrontend
