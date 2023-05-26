@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { View } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { colors } from "../../common/constants";
 
 interface ITabIconProps {
     focused?: boolean;
@@ -10,23 +11,23 @@ interface ITabIconProps {
     iconFocused: 'person' | 'search' | 'notifications'
 }
 
-export const TabIcon: FC<ITabIconProps> = ({ focused = false, color = "gray", size = 20, icon, iconFocused }) => {
+export const TabIcon: FC<ITabIconProps> = ({ focused = false, color = colors.GRAY, size = 20, icon, iconFocused }) => {
     return (
         <>
-            {focused && (
+            {/* {focused && (
                 <View style={{
                     position: 'absolute',
                     top: 0,
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    backgroundColor: 'black',
+                    backgroundColor: colors.MAIN_COLOR,
                     width: '100%',
                     height: 3
                 }}>
                 </View>
-            )}
-            <Ionicons name={focused ? iconFocused : icon } size={size} color={focused ? 'black' : color} />
+            )} */}
+            <Ionicons name={focused ? iconFocused : icon } size={size} color={focused ? colors.MAIN_COLOR : color} />
         </>
     )
 }

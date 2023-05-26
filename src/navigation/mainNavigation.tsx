@@ -3,6 +3,7 @@ import { TabIcon } from "./components";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Notifications, Jobs, Profile } from "../screens";
+import { colors } from "../common/constants";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -13,7 +14,7 @@ const Tab = createBottomTabNavigator();
 
 export const ProfileStack = () => {
     return (
-        <Stack.Navigator initialRouteName="Profile">
+        <Stack.Navigator initialRouteName="Profile" screenOptions={{headerTitleAlign: 'center', headerTitle: 'WAW'}}>
             <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
     )
@@ -21,7 +22,7 @@ export const ProfileStack = () => {
 
 export const JobsStack = () => {
     return (
-        <Stack.Navigator initialRouteName="Jobs">
+        <Stack.Navigator initialRouteName="Jobs" screenOptions={{headerTitleAlign: 'center'}}>
             <Stack.Screen name="Jobs" component={Jobs} />
         </Stack.Navigator>
     )
@@ -29,7 +30,7 @@ export const JobsStack = () => {
 
 export const NotificationsStack = () => {
     return (
-        <Stack.Navigator initialRouteName="Notifications">
+        <Stack.Navigator initialRouteName="Notifications" screenOptions={{headerTitleAlign: 'center'}}>
             <Stack.Screen name="Notifications" component={Notifications} />
         </Stack.Navigator>
     )
@@ -41,11 +42,13 @@ const MainTabNavigation: FC = ({  }) => {
             screenOptions={{
                 tabBarShowLabel: true,
                 tabBarHideOnKeyboard: true,
-                tabBarActiveTintColor: 'black',
+                tabBarActiveTintColor: colors.MAIN_COLOR,
+                tabBarInactiveTintColor: colors.GRAY,
                 tabBarLabelStyle: {
-                    fontSize: 12
+                    fontSize: 12,
+                    fontWeight: "bold"
                 },
-                headerShown: false
+                headerShown: false,
             }}
             initialRouteName="ProfileStack"
         >

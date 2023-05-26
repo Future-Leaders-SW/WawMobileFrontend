@@ -6,6 +6,7 @@ import {
     StatusBarStyle,
     Platform,
 } from "react-native";
+import { colors } from "../../common/constants";
 
 interface IScreenProps {
     containerStyle?: ViewStyle;
@@ -23,7 +24,7 @@ const Container: FC<IScreenProps> = ({ barStyle = "dark-content", containerStyle
                 barStyle={barStyle}
                 backgroundColor={isIOS ? 'transparent' : '#F2F2F2'}
             />
-            <SafeAreaView style={[{ flexDirection: "column", flex: 1 }, containerStyle]}>
+            <SafeAreaView style={[{ flexDirection: "column", flex: 1, backgroundColor: colors.BACKGROUND_COLOR }, containerStyle]}>
                 {children}
             </SafeAreaView>
         </>
