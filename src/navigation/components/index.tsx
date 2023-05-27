@@ -11,7 +11,7 @@ interface ITabIconProps {
     iconFocused: 'person' | 'search' | 'notifications'
 }
 
-export const TabIcon: FC<ITabIconProps> = ({ focused = false, color = colors.GRAY, size = 20, icon, iconFocused }) => {
+export const TabIcon: FC<ITabIconProps> = ({ focused = false, color = colors.MENU_COLOR, size = 20, icon, iconFocused }) => {
     return (
         <>
             {/* {focused && (

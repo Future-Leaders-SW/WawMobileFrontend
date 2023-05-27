@@ -1,0 +1,1 @@
+export const WAW_ICON = require('./WAW-ICON.png');

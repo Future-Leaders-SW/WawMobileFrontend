@@ -43,7 +43,7 @@ const MainTabNavigation: FC = ({  }) => {
                 tabBarShowLabel: true,
                 tabBarHideOnKeyboard: true,
                 tabBarActiveTintColor: colors.MAIN_COLOR,
-                tabBarInactiveTintColor: colors.GRAY,
+                tabBarInactiveTintColor: colors.MENU_COLOR,
                 tabBarLabelStyle: {
                     fontSize: 12,
                     fontWeight: "bold"

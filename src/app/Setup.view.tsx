@@ -13,7 +13,7 @@ import { ISessionStore, IUserStore } from "../stores/interfaces"; */
 
 const Setup: FC = ({ }) => {
 
-    const auth = true;
+    const auth = false;
     const loading = false;
 
     if (auth) {

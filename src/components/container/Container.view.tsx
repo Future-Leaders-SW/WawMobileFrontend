@@ -5,6 +5,8 @@ import {
     ViewStyle,
     StatusBarStyle,
     Platform,
+    TouchableWithoutFeedback,
+    Keyboard,
 } from "react-native";
 import { colors } from "../../common/constants";
 
@@ -24,9 +26,11 @@ const Container: FC<IScreenProps> = ({ barStyle = "dark-content", containerStyle
                 barStyle={barStyle}
                 backgroundColor={isIOS ? 'transparent' : '#F2F2F2'}
             />
-            <SafeAreaView style={[{ flexDirection: "column", flex: 1, backgroundColor: colors.BACKGROUND_COLOR }, containerStyle]}>
-                {children}
-            </SafeAreaView>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+                <SafeAreaView style={[{ flexDirection: "column", flex: 1, backgroundColor: colors.BACKGROUND_COLOR }, containerStyle]}>
+                    {children}
+                </SafeAreaView>
+            </TouchableWithoutFeedback>
         </>
     );
 }
